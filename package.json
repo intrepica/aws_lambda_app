@@ -1,0 +1,26 @@
+{
+  "name": "aws_lambda_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Tim Fairbrother <tdfairbrother@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/intrepica/aws_lambda_app"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha",
+    "run": "index.js"
+  },
+  "dependencies": {
+    "airbrake": "^0.3.8",
+    "aws_lambda_handler": "^1.0.1",
+    "proxyquire": "^1.6.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1"
+  }
+}
