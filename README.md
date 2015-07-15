@@ -7,6 +7,14 @@ About
 --------------
 Wraps aws_lambda_handler providing an error handler.
 
+Requires the following ENV variables.
+
+```bash
+AIRBRAKE_KEY - api key
+FUNCTION_NAME - name of lambda handler to tag the error object with
+```
+
+
 Example
 --------------
 
