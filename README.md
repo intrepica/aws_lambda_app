@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/projects/553c8550-5a94-4e3b-8bb4-49df3678bd36/483484/badge.svg)](https://semaphoreci.com/lp/aws_lambda_app)
+
 Aws Lambda App
 ====================
 
