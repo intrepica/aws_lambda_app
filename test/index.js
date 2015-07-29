@@ -21,6 +21,7 @@ describe('aws_lambda_app', function(){
     snsEvent = {
       'Records':[
         {
+          'EventSource': 'aws:sns',
           'Sns':{
             'Message': JSON.stringify(event)
           }
