@@ -171,8 +171,8 @@
       }
     },
     "aws_lambda_handler": {
-      "version": "2.0.3",
-      "from": "aws_lambda_handler@2.0.3",
+      "version": "2.1.0",
+      "from": "aws_lambda_handler@^2.0.2",
       "dependencies": {
         "aws_message_reader": {
           "version": "3.0.2",
