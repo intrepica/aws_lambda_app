@@ -42,11 +42,8 @@ describe('aws_lambda_app', function(){
 
   function context(callback) {
     return {
-      succeed: function(data) {
-        callback(data);
-      },
-      fail:function(err) {
-        callback(err);
+      done:function(err, data) {
+        callback(err, data);
       }
     };    
   }
@@ -75,7 +72,7 @@ describe('aws_lambda_app', function(){
           handler.yields(null, result);
           var lambdaApp = requireHandler();
           var wrappedHandler = lambdaApp(handler);
-          wrappedHandler(event, context(function(data) {
+          wrappedHandler(event, context(function(err, data) {
             expect(data).to.eql(result);
             done();
           }));
