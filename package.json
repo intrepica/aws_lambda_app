@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "airbrake": "^0.3.8",
-    "aws_lambda_handler": "^2.1.3"
+    "aws_lambda_handler": "^3.0.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",

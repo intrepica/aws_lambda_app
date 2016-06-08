@@ -40,11 +40,10 @@ describe('aws_lambda_app', function(){
     return proxyquire('../', requireStubs); 
   }
 
-
   function context(callback) {
     return {
-      succeed: function() {
-        callback();
+      succeed: function(data) {
+        callback(data);
       },
       fail:function(err) {
         callback(err);
@@ -61,8 +60,28 @@ describe('aws_lambda_app', function(){
       wrappedHandler(snsEvent, context(function() {
         handler.verify();
         done();
-      }));      
-    }); 
+      }));
+    });
+
+    describe('when the event doesnt contain Records', function() {
+      describe('when handler invokes callback with a result', function() {
+        it('calls context.succeed with the result', function(done) {
+          var result = {
+            data: {
+              name: 'test'
+            }
+          };
+          var handler = stub();
+          handler.yields(null, result);
+          var lambdaApp = requireHandler();
+          var wrappedHandler = lambdaApp(handler);
+          wrappedHandler(event, context(function(data) {
+            expect(data).to.eql(result);
+            done();
+          }));
+        });
+      });
+    });
   });
 
   describe('when callback errs', function() {
